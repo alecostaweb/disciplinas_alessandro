@@ -2,6 +2,6 @@
 
 <p>{{ $disciplina->ementa }}</p>
 
-<a href="/disciplinas/{{ $disciplina->id }}/edit">[ Editar ]</a>
-&nbsp;&nbsp;
-<a href="/">[ Disciplinas ]</a>
+<input type="button" onclick='location.href="/disciplinas/{{ $disciplina->id }}/edit";' value="Editar"/>
+&nbsp;
+<input type="button" onclick='location.href="/";' value="Disciplinas"/>
