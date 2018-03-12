@@ -2,6 +2,9 @@
 {{ csrf_field() }}
 
 Título: <input name="titulo"><br />
-Ementa: <textarea name="ementa"> </textarea><br />
+Ementa: <textarea name="ementa"></textarea><br />
+
 <button type="submit">Salvar</button>
 </form>
+
+<a href="/">[ Disciplinas ]</a>

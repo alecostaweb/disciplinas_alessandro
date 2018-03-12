@@ -11,4 +11,14 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 .env
-*.swp
+**/*.swp
+**/*.swo
+**/*#
+**/*~
+**/*.bak
+**/*.sw[abcdefghijklmnop]
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes

@@ -2,4 +2,6 @@
 
 <p>{{ $disciplina->ementa }}</p>
 
-<a href="/">Home</a>
+<a href="/disciplinas/{{ $disciplina->id }}/edit">[ Editar ]</a>
+&nbsp;&nbsp;
+<a href="/">[ Disciplinas ]</a>
