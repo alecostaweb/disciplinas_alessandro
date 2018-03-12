@@ -7,6 +7,6 @@ Título:<input name="titulo" value="{{ $disciplina->titulo }}"><br />
 Ementa: <textarea name="ementa">{{ $disciplina->ementa }}</textarea><br />
 
 <button type="submit">Salvar</button>
+&nbsp;
+<input type="button" onclick='location.href="/";' value="Disciplinas"/>
 </form>
-
-<a href="/">[ Disciplinas ]</a>
