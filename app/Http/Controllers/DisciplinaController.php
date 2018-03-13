@@ -74,6 +74,8 @@ class DisciplinaController extends Controller
      */
     public function update(Request $request, Disciplina $disciplina)
     {
+        # dd($diciplina); # Dump ou no $request
+        
         $disciplina->titulo = $request->titulo;
         $disciplina->ementa = $request->ementa;
         $disciplina->save();

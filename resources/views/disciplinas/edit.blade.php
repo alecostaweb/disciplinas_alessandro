@@ -1,12 +1,18 @@
-<form method="POST" action="/disciplinas/{{ $disciplina->id }}">
+@extends ('master')
 
-{{ csrf_field() }}
-{{ method_field('patch') }}
+@section ('content')
 
-Título:<input name="titulo" value="{{ $disciplina->titulo }}"><br />
-Ementa: <textarea name="ementa">{{ $disciplina->ementa }}</textarea><br />
+    <form method="POST" action="/disciplinas/{{ $disciplina->id }}">
 
-<button type="submit">Salvar</button>
-&nbsp;
-<input type="button" onclick='location.href="/";' value="Disciplinas"/>
-</form>
+        {{ csrf_field() }}
+        {{ method_field('patch') }}
+
+        Título:<input name="titulo" value="{{ $disciplina->titulo }}"><br />
+        Ementa: <textarea name="ementa">{{ $disciplina->ementa }}</textarea><br />
+
+        <button type="submit">Salvar</button>
+        &nbsp;
+        <input type="button" onclick='location.href="/";' value="Disciplinas"/>
+    </form>
+
+@endsection    
