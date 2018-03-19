@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Disciplina;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class DisciplinaController extends Controller
@@ -92,5 +93,26 @@ class DisciplinaController extends Controller
     {
         $disciplina->delete();
         return redirect('/');
+    }
+
+    public function createTurma($disciplina_id)
+    {
+        $disciplina = Disciplina::find($disciplina_id);
+        return view('disciplinas.turmas.create', compact('disciplina'));
+
+        # return view('disciplinas.turmas.create', compact('disciplina_id'));
+    }
+
+    public function storeTurma(Request $request, $disciplina_id)
+    {
+        $turma = new \App\Turma;
+        $turma->ministrante = $request->ministrante;
+        $turma->inicio = Carbon::createFromFormat('d/m/Y', $request->inicio);
+        $turma->fim = Carbon::createFromFormat('d/m/Y', $request->fim); 
+        $turma->bibliografia = $request->bibliografia;
+        $turma->disciplina_id = $request->disciplina_id;
+        # $turma->save();
+        $salvaTurma = Disciplina::find($disciplina_id)->turmas()->save($turma); 
+        return redirect("/disciplinas/$disciplina_id");
     }
 }
