@@ -6,8 +6,8 @@
 
     <p>{{ $disciplina->ementa }}</p>
 
-    <input type="button" onclick='location.href="/disciplinas/{{ $disciplina->id }}/edit";' value="Editar"/>
+    <input class="btn btn-warning" type="button" onclick='location.href="/disciplinas/{{ $disciplina->id }}/edit";' value="Editar"/>
     &nbsp;
-    <input type="button" onclick='location.href="/";' value="Disciplinas"/>
+    <input class="btn btn-primary" type="button" onclick='location.href="/";' value="Disciplinas"/>
 
 @endsection
