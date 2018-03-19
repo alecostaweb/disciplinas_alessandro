@@ -8,9 +8,9 @@
         Título: <input name="titulo"><br />
         Ementa: <textarea name="ementa"></textarea><br />
 
-        <button type="submit">Salvar</button>
+        <button class="btn btn-success" type="submit">Salvar</button>
+        &nbsp;
+        <input class="btn btn-primary" type="button" onclick='location.href="/";' value="Disciplinas"/>
     </form>
-
-    <a href="/">[ Disciplinas ]</a>i
 
 @endsection    
