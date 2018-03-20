@@ -13,9 +13,9 @@
 
     Ministrante: <input name="ministrante">
     <br />
-    Data início: <input type="date" name="inicio">
+    Data início: <input class="datepicker" type="date" name="inicio">
     <br />
-    Data fim: <input type="date" name="fim">
+    Data fim: <input class="datepicker" type="date" name="fim">
     <br />
     Bibliografia: <textarea name="bibliografia"></textarea>
     <br />

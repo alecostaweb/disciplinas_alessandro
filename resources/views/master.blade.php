@@ -38,11 +38,20 @@
                     <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
             </ul>
+            
+            <!--
             <form class="form-inline mt-2 mt-md-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
+            -->
 
+            <form method="POST" action="/disciplinas/search" class="form-inline mt-2 mt-md-0">
+                {{ csrf_field() }}
+                <input name="text" class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>                                                                                                        
+            </form>  
+    
             @auth              
                 <form id="logout-form" action="{{ route('logout') }}" method="POST"> 
                     {{ csrf_field() }}              
