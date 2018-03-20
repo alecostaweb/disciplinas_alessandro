@@ -11,9 +11,9 @@
 
     Ministrante: <input name="ministrante">
     <br />
-    Data início: <input name="inicio">
+    Data início: <input name="inicio" placeholder="dd/mm/aaaa">
     <br />
-    Data fim: <input name="fim">
+    Data fim: <input name="fim" placeholder="dd/mm/aaaa">
     <br />
     Bibliografia: <textarea name="bibliografia"></textarea>
     <br />
