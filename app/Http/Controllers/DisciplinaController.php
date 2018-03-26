@@ -11,8 +11,19 @@ class DisciplinaController extends Controller
 
 	public function __construct()
 	{
-    	$this->middleware('auth')->except(['index','show']);
+        $this->middleware('auth')->except([
+            'index', 
+            'show',
+            'search'
+        ]);
 	}
+
+    public function search(Request $request)
+    {
+        $text = $request->text;
+        $disciplinas = Disciplina::where('titulo', 'LIKE', "%{$text}%")->get();
+        return view('disciplinas.index',compact('disciplinas'));
+    }
 
     /**
      * Display a listing of the resource.
@@ -113,12 +124,13 @@ class DisciplinaController extends Controller
     {
         $turma = new \App\Turma;
         $turma->ministrante = $request->ministrante;
-        $turma->inicio = Carbon::createFromFormat('d/m/Y', $request->inicio);
-        $turma->fim = Carbon::createFromFormat('d/m/Y', $request->fim); 
+        $turma->inicio = Carbon::parse($request->inicio);
+        $turma->fim = Carbon::parse($request->fim); 
         $turma->bibliografia = $request->bibliografia;
         $turma->disciplina_id = $request->disciplina_id;
         # $turma->save();
         $salvaTurma = Disciplina::find($disciplina_id)->turmas()->save($turma); 
+        
         return redirect("/disciplinas/$disciplina_id");
     }
 }
