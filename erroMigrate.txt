@@ -1,0 +1,34 @@
+# alessandro @ AleMintUSP in /var/www/app.dev/disciplinas_alessandro on git:senhaUnica o [10:29:33] 
+ php artisan migrate:refresh
+Rolling back: 2018_03_08_170621_create_disciplinas_table
+Rolled back:  2018_03_08_170621_create_disciplinas_table
+Rolling back: 2014_10_12_100000_create_password_resets_table
+Rolled back:  2014_10_12_100000_create_password_resets_table
+Rolling back: 2014_10_12_000000_create_users_table
+Rolled back:  2014_10_12_000000_create_users_table
+
+   Illuminate\Database\QueryException  : SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'turmas' already exists (SQL: create table `turmas` (`id` int unsigned not null auto_increment primary key, `created_at` timestamp null, `updated_at` timestamp null, `ministrante` varchar(255) not null, `inicio` date not null, `fim` date not null, `bibliografia` text null, `disciplina_id` int unsigned not null) default character set utf8mb4 collate utf8mb4_unicode_ci)
+
+  at /var/www/app.dev/disciplinas_alessandro/vendor/laravel/framework/src/Illuminate/Database/Connection.php: 664
+    660|         // If an exception occurs when attempting to run a query, we'll format the error
+    661|         // message to include the bindings with SQL, which will make this exception a
+    662|         // lot more helpful to the developer instead of just the database's errors.
+    663|         catch (Exception $e) {
+  > 664|             throw new QueryException(
+    665|                 $query, $this->prepareBindings($bindings), $e
+    666|             );
+    667|         }
+    668| 
+
+  Exception trace:
+
+  1   PDOException::("SQLSTATE[42S01]: Base table or view already exists: 1050 Table 'turmas' already exists")
+      /var/www/app.dev/disciplinas_alessandro/vendor/laravel/framework/src/Illuminate/Database/Connection.php : 458
+
+  2   PDOStatement::execute()
+      /var/www/app.dev/disciplinas_alessandro/vendor/laravel/framework/src/Illuminate/Database/Connection.php : 458
+
+  Please use the argument -v to see more details.
+
+# alessandro @ AleMintUSP in /var/www/app.dev/disciplinas_alessandro on git:senhaUnica o [10:29:38] C:1
+
