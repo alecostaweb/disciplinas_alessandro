@@ -11,3 +11,6 @@ Auth::routes();
 
 Route::get('/home', 'DisciplinaController@index')->name('home');
 
+# rotas para a senha única
+Route::get('login', 'Auth\LoginController@redirectToProvider');
+Route::get('callback', 'Auth\LoginController@handleProviderCallback');
