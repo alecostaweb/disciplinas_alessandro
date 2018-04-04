@@ -53,13 +53,12 @@
             </form>  
     
             @auth              
-                <form id="logout-form" action="{{ route('logout') }}" method="POST"> 
+                <form id="logout-form" action="/logout" method="POST"> 
                     {{ csrf_field() }}              
                     <button class="btn btn-dark" type="submit">Sair</button>
                 </form>        
             @else              
-                <a class="btn btn-dark" href="{{ route('login') }}">Entrar</a>
-                <a class="btn btn-dark" href="{{ route('register') }}">Registrar</a>"
+                <a class="btn btn-dark" href="/login">Entrar</a>
             @endauth
 
         </div>
